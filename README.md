@@ -10,3 +10,7 @@ A simples Crawler that get's every match info of any Rainbow Six Siege player.
 
 ## How to Use:
 - Please Open the release Session: [Click Here](https://github.com/DantasB/R6Siege-PlayerInfo-Crawler/releases)
+
+## Example:
+- Here's an example in how the Temporary Data is stored: [Click Here](https://github.com/DantasB/R6Siege-PlayerInfo-Crawler/R6SCrawler/WorkFolder/Alekz 211dc9a3-3c48-4bd5-ab5b-1055b675f965.json)
+- Here's an example in how the Result Data is Stored: [Click Here](https://github.com/DantasB/R6Siege-PlayerInfo-Crawler/R6SCrawler/ResultFolder/Alekz.json)
