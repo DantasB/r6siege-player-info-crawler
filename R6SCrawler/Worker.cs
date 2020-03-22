@@ -46,7 +46,7 @@ namespace R6SCrawler
 
         public static string GetUbiToken(string player)
         {
-            string minervaUser = player + ".MNV";
+            string minervaUser = player;
             string userUrl     = String.Format(mainUrl, minervaUser);
 
             //Load the json with the user data
