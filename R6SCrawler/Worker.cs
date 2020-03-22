@@ -14,13 +14,13 @@ namespace R6SCrawler
         public static string secondUrl = "https://r6stats.com/stats/{0}/";
 
         [Obsolete]
-        public static string resultPath = ConfigurationSettings.AppSettings["resultPath"];
+        public static string resultPath = ConfigurationSettings.AppSettings["ResultPath"] + @"\";
 
         [Obsolete]
         static void Main()
         {
             string[] players = ConfigurationSettings.AppSettings["user"].Split('|');
-            string path      = ConfigurationSettings.AppSettings["path"];
+            string path      = ConfigurationSettings.AppSettings["TemporaryPath"] + @"\";
 
             foreach (string player in players)
             {
