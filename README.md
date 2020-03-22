@@ -1,4 +1,5 @@
-# R6Siege-PlayerInfo-Crawler
+# R6Siege Crawler Made With C# 
+
 A simples Crawler that get's every match info of any Rainbow Six Siege player.
 
 ## Information:
