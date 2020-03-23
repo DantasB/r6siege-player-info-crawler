@@ -306,27 +306,28 @@ namespace R6SCrawler
             // read file into a string and deserialize JSON to a type
             R6StatsData storedPlayer = JsonConvert.DeserializeObject<R6StatsData>(File.ReadAllText(path));         
 
+            PlayerData player = new PlayerData
+            {
+                RankedWins = Utils.Parse(minervaPlayer.RankedWins, storedPlayer.RankedWins),
+                RankedKills = Utils.Parse(minervaPlayer.RankedKills, storedPlayer.RankedKills),
+                RankedDeaths = Utils.Parse(minervaPlayer.RankedDeaths, storedPlayer.RankedDeaths),
+                RankedLosses = Utils.Parse(minervaPlayer.RankedLosses, storedPlayer.RankedLosses),
+                RankedTimePlayed = Utils.Parse(Utils.DateToMinute(minervaPlayer.RankedTimePlayed).ToString(), Utils.DateToMinute(storedPlayer.RankedTimePlayed).ToString()).ToString() + " minutos",
+
+                CasualWins = Utils.Parse(minervaPlayer.CasualWins, storedPlayer.CasualWins),
+                CasualKills = Utils.Parse(minervaPlayer.CasualKills, storedPlayer.CasualKills),
+                CasualDeaths = Utils.Parse(minervaPlayer.CasualDeaths, storedPlayer.CasualDeaths),
+                CasualLosses = Utils.Parse(minervaPlayer.CasualLosses, storedPlayer.CasualLosses),
+                CasualTimePlayed = Utils.Parse(Utils.DateToMinute(minervaPlayer.CasualTimePlayed).ToString(), Utils.DateToMinute(storedPlayer.CasualTimePlayed).ToString()).ToString() + " minutos",
+
+                TerroristHuntTimePlayed = Utils.Parse(minervaPlayer.TerroristHuntTimePlayed, storedPlayer.TerroristHuntTimePlayed).ToString() + " minutos"
+            };
+
             using (StreamWriter file = File.CreateText(path))
             {
                 JsonSerializer serializer = new JsonSerializer();
                 serializer.Serialize(file, minervaPlayer);
             }
-
-            PlayerData player = new PlayerData();
-
-            player.RankedWins       = Utils.Parse(minervaPlayer.RankedWins, storedPlayer.RankedWins);
-            player.RankedKills      = Utils.Parse(minervaPlayer.RankedKills, storedPlayer.RankedKills);
-            player.RankedDeaths     = Utils.Parse(minervaPlayer.RankedDeaths, storedPlayer.RankedDeaths);
-            player.RankedLosses     = Utils.Parse(minervaPlayer.RankedLosses, storedPlayer.RankedLosses);
-            player.RankedTimePlayed = Utils.Parse(Utils.DateToMinute(minervaPlayer.RankedTimePlayed).ToString(), Utils.DateToMinute(storedPlayer.RankedTimePlayed).ToString()).ToString() + " minutos";
-
-            player.CasualWins       = Utils.Parse(minervaPlayer.CasualWins, storedPlayer.CasualWins);
-            player.CasualKills      = Utils.Parse(minervaPlayer.CasualKills, storedPlayer.CasualKills);
-            player.CasualDeaths     = Utils.Parse(minervaPlayer.CasualDeaths, storedPlayer.CasualDeaths);
-            player.CasualLosses     = Utils.Parse(minervaPlayer.CasualLosses, storedPlayer.CasualLosses);
-            player.CasualTimePlayed = Utils.Parse(Utils.DateToMinute(minervaPlayer.CasualTimePlayed).ToString(), Utils.DateToMinute(storedPlayer.CasualTimePlayed).ToString()).ToString() + " minutos";
-
-            player.TerroristHuntTimePlayed = Utils.Parse(minervaPlayer.TerroristHuntTimePlayed, storedPlayer.TerroristHuntTimePlayed).ToString() + " minutos";
 
             // serialize JSON directly to a file
             using (StreamWriter file = File.CreateText(resultPath + minervaPlayer._Nick + ".json"))
