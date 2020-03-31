@@ -12,6 +12,16 @@ A simples Crawler that get's every match info of any Rainbow Six Siege player.
 ## How to Use:
 - Please Open the release Session: [Click Here](https://github.com/DantasB/R6Siege-PlayerInfo-Crawler/releases)
 
+## App.Config
+You have to change the informations on the App.Config file, using the following attributes:
+```
+<appSettings>    
+  <add key="user" value="PLAYER1|PLAYER2 OR JUST PLAYER1" />
+  <add key="TemporaryPath" value="YOUR TEMPORARY FOLDER PATH ENTERS HERE"/>
+  <add key="ResultPath" value="YOUR RESULT FOLDER PATH ENTERS HERE"/>    
+</appSettings>
+```
+  
 ## Example:
 - Here's an example in how the Temporary Data is stored: [Click Here](https://github.com/DantasB/R6Siege-PlayerInfo-Crawler/blob/master/R6SCrawler/WorkFolder/Alekz%20211dc9a3-3c48-4bd5-ab5b-1055b675f965.json)
 - Here's an example in how the Result Data is Stored: [Click Here](https://github.com/DantasB/R6Siege-PlayerInfo-Crawler/blob/master/R6SCrawler/ResultFolder/Alekz.json)
